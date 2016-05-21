@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="sinau.module.hibernate.pojo.Employee" table="EMPLOYEE">
+		<id name="id" type="long">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="firstName" type="string" >
+			<column name="first_name" length="20" />
+		</property>
+		<property name="salary" type="double">
+			<column name="salary" />
+		</property>
+	</class>
+</hibernate-mapping>
