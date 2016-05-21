@@ -17,11 +17,7 @@ public class App {
 		employee.setFirstName("Fajri Rahmat");
 		employee.setSalary(13000000);
 		session.save(employee);
-		session.getTransaction().commit();
-		
-		
-
-		
+		session.getTransaction().commit();		
 		sessionFactory.close();
 		
 	}
