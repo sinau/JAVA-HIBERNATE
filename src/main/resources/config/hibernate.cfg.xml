@@ -7,7 +7,7 @@
 	<session-factory>
 		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">yourpassword</property>
+        <property name="hibernate.connection.password">j4ckth3r1p</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sinau_hibernate</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -16,5 +16,6 @@
         <!-- Mapping configuration -->
         <mapping resource="/config/Employee.hbm.xml"></mapping>
         <mapping resource="/config/Address.hbm.xml"></mapping>
+        <mapping resource="/config/Department.hbm.xml"></mapping>
 	</session-factory>
 </hibernate-configuration>

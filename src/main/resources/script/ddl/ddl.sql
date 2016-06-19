@@ -17,3 +17,13 @@ create table ADDRESS (
    zipcode VARCHAR(10) default NULL,
    CONSTRAINT FK_EMPLOYEE FOREIGN KEY (id) REFERENCES employee(id)
 );
+
+CREATE TABLE DEPARTMENT(
+	id bigint not null,
+    department varchar(128) not null,
+    primary key(id)
+);
+
+alter table employee add column department_id bigint not null;
+
+alter table employee add constraint fk_department_employee foreign key(department_id) references DEPARTMENT(id);

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="sinau.module.hibernate.pojo.Department" table="DEPARTMENT" >
+		<id name="id" type="long">
+			<column name="id" />
+		</id>
+		<property name="department" type="string" >
+			<column name="department" length="128" />
+		</property>
+		<set name="employees" table="EMPLOYEE" inverse="true" lazy="true" fetch="select">
+			<key>
+				<column name="id" not-null="true" />
+			</key>
+			<one-to-many class="sinau.module.hibernate.pojo.Employee" />
+		</set>
+	</class>
+</hibernate-mapping>

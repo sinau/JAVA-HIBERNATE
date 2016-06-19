@@ -16,6 +16,8 @@
 		</property>
 		
 		<one-to-one name="address" class="sinau.module.hibernate.pojo.Address" cascade="save-update" />
-		
+		<many-to-one name="department" class="sinau.module.hibernate.pojo.Department" fetch="select">
+			<column name="department_id" not-null="true" />
+		</many-to-one>
 	</class>
 </hibernate-mapping>
