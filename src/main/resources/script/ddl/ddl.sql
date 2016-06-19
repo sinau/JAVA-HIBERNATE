@@ -8,3 +8,12 @@ create table EMPLOYEE (
    salary     DECIMAL  default NULL,
    PRIMARY KEY (id)
 );
+
+create table ADDRESS (
+   id BIGINT NOT NULL,
+   street_name VARCHAR(40) default NULL,
+   city_name VARCHAR(40) default NULL,
+   state_name VARCHAR(40) default NULL,
+   zipcode VARCHAR(10) default NULL,
+   CONSTRAINT FK_EMPLOYEE FOREIGN KEY (id) REFERENCES employee(id)
+);

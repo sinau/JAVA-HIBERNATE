@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import sinau.module.hibernate.pojo.Address;
 import sinau.module.hibernate.pojo.Employee;
 
 public class App {
@@ -13,10 +14,22 @@ public class App {
 		Session session = sessionFactory.openSession();
  		
 		session.beginTransaction();
+		
+		Address empAddress = new Address();
+		empAddress.setCity("Kuningan");
+		empAddress.setState("Jakarta Selatan");
+		empAddress.setZipcode("12940");
+		empAddress.setStreet("Jln. Bahagia Selalu");
+		
 		Employee employee = new Employee();
-		employee.setFirstName("Fajri Rahmat");
-		employee.setSalary(13000000);
+		employee.setFirstName("Fajri Fulan");
+		employee.setSalary(15000000);
+		employee.setAddress(empAddress);
+		
+		empAddress.setEmployee(employee);
+		
 		session.save(employee);
+		
 		session.getTransaction().commit();		
 		sessionFactory.close();
 		

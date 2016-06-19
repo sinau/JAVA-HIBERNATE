@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="sinau.module.hibernate.pojo.Address" table="address">
+		<id name="employeeId" type="long" column="id">
+			<generator class="foreign">
+				<param name="property">employee</param>
+			</generator>
+		</id>
+		
+		<one-to-one name="employee" class="sinau.module.hibernate.pojo.Employee" constrained="true" />
+		
+		<property name="street" column="street_name" type="string" />
+		<property name="city" column="city_name" type="string" />
+		<property name="state" column="state_name" type="string" />
+		<property name="zipcode" column="zipcode" type="string" />
+	</class>
+</hibernate-mapping>

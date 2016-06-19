@@ -14,5 +14,8 @@
 		<property name="salary" type="double">
 			<column name="salary" />
 		</property>
+		
+		<one-to-one name="address" class="sinau.module.hibernate.pojo.Address" cascade="save-update" />
+		
 	</class>
 </hibernate-mapping>

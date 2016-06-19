@@ -4,6 +4,13 @@ public class Employee {
 	private long id;
 	private String firstName;
 	private double salary;
+	private Address address;
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	public long getId() {
 		return id;
 	}
